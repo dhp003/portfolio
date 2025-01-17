@@ -1,49 +1,72 @@
 body {
-    /* Set line height to 1.5 times the font size
-         and use the OS’s UI font as the website font
-       */
-    font: 100%/1.5 system-ui;
-    max-width: 100ch;
-    margin-inline: max(1em, (100% - 100ch) / 2);
-    padding-inline: 1em; 
-  }
+  /* Set line height to 1.5 times the font size and use the OS’s UI font */
+  font: 100%/1.5 system-ui;
+  max-width: 100ch;
+  margin-inline: max(1em, (100% - 100ch) / 2);
+  padding-inline: 1em; 
+}
+
+nav {
+  display: flex; /* Enable Flexbox layout */
+  justify-content: space-around; /* Distribute links evenly */
+  margin-bottom: 1em; /* Adds spacing below the nav */
+  border-bottom: 1px solid oklch(80% 3% 200); /* Cool gray bottom border */
+}
   
-  nav {
-    display: flex; /* Enable Flexbox layout */
-    justify-content: space-around; /* Distribute links evenly */
-    margin-bottom: 1em; /* Adds spacing below the nav */
-    border-bottom: 1px solid oklch(80% 3% 200); /* Cool gray bottom border */
-  }
+nav a {
+  flex: 1; /* Makes all links take up equal space */
+  text-decoration: none; /* Removes underline */
+  color: inherit; /* Inherit parent color */
+  text-align: center; /* Centers text */
+  padding: 0.5em; /* Adds spacing around links */
+}
   
-  nav a {
-    flex: 1; /* Makes all links take up equal space */
-    text-decoration: none; /* Removes underline */
-    color: inherit; /* Inherit parent color */
-    text-align: center; /* Centers text */
-    padding: 0.5em; /* Adds spacing around links */
-  }
+/* Style the current page link */
+nav a.current {
+  border-bottom: 0.4em solid oklch(80% 3% 200); /* Thick border for current page */
+  padding-bottom: 0.1em; /* Adjusts padding to counter border height */
+}
   
-  /* Style the current page link */
-  nav a.current {
-    border-bottom: 0.4em solid oklch(80% 3% 200); /* Thick border for current page */
-    padding-bottom: 0.1em; /* Adjusts padding to counter border height */
-  }
+/* Step 2.3: Accent color and hover styles */
+:root {
+  --color-accent: oklch(65% 50% 0); /* Define your accent color */
+}
   
-  /* Step 2.3: Accent color and hover styles */
-  :root {
-    --color-accent: oklch(65% 50% 0); /* Define your accent color */
-  }
+html {
+  accent-color: var(--color-accent); /* Apply accent color globally */
+}
   
-  html {
-    accent-color: var(--color-accent); /* Apply accent color globally */
-  }
+/* Hover styles */
+nav a:hover {
+  border-bottom: 0.4em solid var(--color-accent); /* Accent color border */
+  background-color: oklch(var(--color-accent) 95% 5% h); /* Light accent background */
+}
   
-  /* Hover styles */
-  nav a:hover {
-    border-bottom: 0.4em solid var(--color-accent); /* Accent color border */
-    background-color: oklch(95% 5% 0 h); /* Light accent background */
-  }
-  
-  p {
-    margin-bottom: 1em; /* Add spacing between paragraphs */
-  } 
+p {
+  margin-bottom: 1em; /* Add spacing between paragraphs */
+} 
+
+input, textarea, button {
+  font: inherit; /* Inherit font family and other properties from parent */
+}
+
+form {
+  display: grid; /* Enable grid layout */
+  grid-template-columns: auto 1fr; /* Label takes as much space as needed, input takes the rest */
+  gap: 1em; /* Add spacing between rows and columns */
+}
+
+label {
+  display: grid;  /* Make labels grid containers */
+  grid-template-columns: subgrid;  /* Use the grid layout of the form */
+  grid-column: 1 / -1;  /* Make labels span across the entire form */
+}
+
+input, textarea, button {
+  grid-column: 2;  /* Place form controls in the second column of the grid */
+}
+
+/* Ensure the submit button spans the full width of the form */
+button {
+  grid-column: 1 / -1;
+}
