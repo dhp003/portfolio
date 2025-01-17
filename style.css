@@ -70,3 +70,58 @@ input, textarea, button {
 button {
   grid-column: 1 / -1;
 }
+/* Apply grid layout to the projects container */
+.projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
+  gap: 1.5em;
+  margin-top: 2em;
+}
+
+/* Make articles a subgrid */
+.projects article {
+  display: grid;
+  grid-template-rows: subgrid; /* Use subgrid for row alignment */
+  grid-row: span 3; /* Span across 3 rows */
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1em;
+  background-color: #fff;
+}
+
+/* Align image, heading, and paragraph within the article */
+.projects img {
+  width: 100%;
+  height: auto;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 1em;
+}
+
+.projects h2 {
+  font-size: 1.25em;
+  margin: 0; /* Remove extra margin */
+}
+
+.projects p {
+  font-size: 1em;
+  color: #333;
+}
+
+/* Apply gap between articles for better spacing */
+.projects {
+  gap: 1em;
+}
+
+/* Make h1 significantly larger for contrast */
+h1 {
+  font-size: 4rem; /* Make h1 significantly larger (400% of body text size) */
+  margin-bottom: 0.5em; /* Add some space below h1 */
+}
+
+/* Ensure consistent line height for all headings */
+h2, h3, h4, h5, h6 {
+  line-height: 1.1; /* Smaller line height for better heading readability */
+  text-wrap: balance; /* Ensure text wraps evenly in multi-line headings */
+  margin-bottom: 0.5em; /* Add spacing after each heading */
+}
+
