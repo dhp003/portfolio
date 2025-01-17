@@ -27,7 +27,7 @@ nav a.current {
   padding-bottom: 0.1em; /* Adjusts padding to counter border height */
 }
   
-/* Step 2.3: Accent color and hover styles */
+/*  Accent color and hover styles */
 :root {
   --color-accent: oklch(65% 50% 0); /* Define your accent color */
 }
@@ -70,11 +70,12 @@ input, textarea, button {
 button {
   grid-column: 1 / -1;
 }
+
 /* Apply grid layout to the projects container */
 .projects {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
-  gap: 1.5em;
+  gap: 1em;
   margin-top: 2em;
 }
 
@@ -83,17 +84,17 @@ button {
   display: grid;
   grid-template-rows: subgrid; /* Use subgrid for row alignment */
   grid-row: span 3; /* Span across 3 rows */
-  border: 1px solid #ddd;
+  border: 1px solid #fcb8b8;
   border-radius: 8px;
   padding: 1em;
-  background-color: #fff;
+  background-color: #fcb8b8;
 }
 
 /* Align image, heading, and paragraph within the article */
 .projects img {
   width: 100%;
   height: auto;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid #f6c7c799;
   margin-bottom: 1em;
 }
 
@@ -124,4 +125,3 @@ h2, h3, h4, h5, h6 {
   text-wrap: balance; /* Ensure text wraps evenly in multi-line headings */
   margin-bottom: 0.5em; /* Add spacing after each heading */
 }
-
