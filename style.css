@@ -7,63 +7,63 @@ body {
 }
 
 nav {
-  display: flex; /* Enable Flexbox layout */
-  justify-content: space-around; /* Distribute links evenly */
-  margin-bottom: 1em; /* Adds spacing below the nav */
-  border-bottom: 1px solid oklch(80% 3% 200); /* Cool gray bottom border */
+  display: flex; 
+  justify-content: space-around; 
+  margin-bottom: 1em; 
+  border-bottom: 1px solid oklch(80% 3% 200); 
 }
   
 nav a {
-  flex: 1; /* Makes all links take up equal space */
-  text-decoration: none; /* Removes underline */
-  color: inherit; /* Inherit parent color */
-  text-align: center; /* Centers text */
-  padding: 0.5em; /* Adds spacing around links */
+  flex: 1; 
+  text-decoration: none; 
+  color: inherit; 
+  text-align: center; 
+  padding: 0.5em; 
 }
   
 /* Style the current page link */
 nav a.current {
-  border-bottom: 0.4em solid oklch(80% 3% 200); /* Thick border for current page */
-  padding-bottom: 0.1em; /* Adjusts padding to counter border height */
+  border-bottom: 0.4em solid oklch(80% 3% 200); 
+  padding-bottom: 0.1em; 
 }
   
 /*  Accent color and hover styles */
 :root {
-  --color-accent: oklch(65% 50% 0); /* Define your accent color */
+  --color-accent: oklch(65% 50% 0); 
 }
   
 html {
-  accent-color: var(--color-accent); /* Apply accent color globally */
+  accent-color: var(--color-accent); 
 }
   
 /* Hover styles */
 nav a:hover {
-  border-bottom: 0.4em solid var(--color-accent); /* Accent color border */
-  background-color: oklch(var(--color-accent) 95% 5% h); /* Light accent background */
+  border-bottom: 0.4em solid var(--color-accent); 
+  background-color: oklch(var(--color-accent) 95% 5% h); 
 }
   
 p {
-  margin-bottom: 1em; /* Add spacing between paragraphs */
+  margin-bottom: 1em; 
 } 
 
 input, textarea, button {
-  font: inherit; /* Inherit font family and other properties from parent */
+  font: inherit;  
 }
 
 form {
-  display: grid; /* Enable grid layout */
-  grid-template-columns: auto 1fr; /* Label takes as much space as needed, input takes the rest */
-  gap: 1em; /* Add spacing between rows and columns */
+  display: grid; 
+  grid-template-columns: auto 1fr; 
+  gap: 1em; 
 }
 
 label {
-  display: grid;  /* Make labels grid containers */
-  grid-template-columns: subgrid;  /* Use the grid layout of the form */
-  grid-column: 1 / -1;  /* Make labels span across the entire form */
+  display: grid; 
+  grid-template-columns: subgrid;  
+  grid-column: 1 / -1;  
 }
 
 input, textarea, button {
-  grid-column: 2;  /* Place form controls in the second column of the grid */
+  grid-column: 2;  
 }
 
 /* Ensure the submit button spans the full width of the form */
@@ -71,36 +71,32 @@ button {
   grid-column: 1 / -1;
 }
 
-/* Apply grid layout to the projects container */
 .projects {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
-  gap: 1em;
-  margin-top: 2em;
+  grid-template-columns: repeat(auto-fill, minmax(15em, 1fr)); 
+  gap: 1.5em; 
+  margin-top: 2em; 
 }
 
-/* Make articles a subgrid */
 .projects article {
   display: grid;
-  grid-template-rows: subgrid; /* Use subgrid for row alignment */
-  grid-row: span 3; /* Span across 3 rows */
-  border: 1px solid #fcb8b8;
+  grid-template-rows: subgrid; 
+  grid-row: span 3; 
+  border: 1px solid #ddd;
   border-radius: 8px;
   padding: 1em;
-  background-color: #fcb8b8;
+  background-color: #fff;
+  box-sizing: border-box;
 }
 
-/* Align image, heading, and paragraph within the article */
-.projects img {
-  width: 100%;
-  height: auto;
-  border-bottom: 1px solid #f6c7c799;
-  margin-bottom: 1em;
+.projects article h2 {
+  margin: 0;
+  font-size: 1.5em; 
 }
 
 .projects h2 {
   font-size: 1.25em;
-  margin: 0; /* Remove extra margin */
+  margin: 0; 
 }
 
 .projects p {
@@ -115,13 +111,15 @@ button {
 
 /* Make h1 significantly larger for contrast */
 h1 {
-  font-size: 4rem; /* Make h1 significantly larger (400% of body text size) */
-  margin-bottom: 0.5em; /* Add some space below h1 */
+  font-size: 4rem; 
+  margin-bottom: 0.5em; 
 }
 
-/* Ensure consistent line height for all headings */
-h2, h3, h4, h5, h6 {
-  line-height: 1.1; /* Smaller line height for better heading readability */
-  text-wrap: balance; /* Ensure text wraps evenly in multi-line headings */
-  margin-bottom: 0.5em; /* Add spacing after each heading */
+/* Adjust text-wrap for h2 */
+h2 {
+  text-wrap: balance;
+}
+
+h3, h4, h5, h6 {
+  line-height: 1.1; 
 }
