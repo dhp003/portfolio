@@ -33,38 +33,43 @@ document.body.insertAdjacentHTML(
     select.value = isDarkMode ? 'dark' : 'light'; 
   }
   
-  const pages = [
-    { url: 'index.html', title: 'Home' },
-    { url: 'projects/index.html', title: 'Projects' },
-    { url: 'contact/index.html', title: 'Contact' },
-    { url: 'resume/index.html', title: 'Resume' },
+  let pages = [
+    { url: '', title: 'Home' },
+    { url: 'projects/', title: 'Projects' },
+    { url: 'contact/', title: 'Contact' },
+    { url: 'resume/', title: 'Resume' },
     { url: 'https://github.com/dhp003', title: 'GitHub' }
-  ];  
+  ];
 
-const ARE_WE_HOME = document.documentElement.classList.contains('home');
-
-const nav = document.createElement('nav');
-
-document.body.prepend(nav);
-
+  let nav = document.createElement('nav');
+  document.body.prepend(nav);
+  
+  // Iterate over the pages array and create links for each page
 for (let p of pages) {
     let url = p.url;
-    const title = p.title;
+    let title = p.title;
   
+    // Check if it's not the home page, then add '../' to the URL
+    const ARE_WE_HOME = document.documentElement.classList.contains('home');
     url = !ARE_WE_HOME && !url.startsWith('http') ? '../' + url : url;
   
-    const a = document.createElement('a');
+    // Create an <a> element for each link
+    let a = document.createElement('a');
     a.href = url;
     a.textContent = title;
   
-    a.classList.toggle(
-      'current',
-      a.host === location.host && a.pathname === location.pathname
-    );
-    
-    if (a.host !== location.host) {
-      a.target = '_blank'; 
-      a.rel = 'noopener noreferrer'; 
+    // Highlight the current page
+    if (a.host === location.host && a.pathname === location.pathname) {
+      a.classList.add('current');
     }
+  
+    // Open external links in a new tab
+    if (a.host !== location.host) {
+      a.target = '_blank';
+      a.rel = 'noopener noreferrer'; // Security measure
+    }
+  
+    // Append the link to the nav element
     nav.append(a);
   }
+  
