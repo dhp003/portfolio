@@ -55,7 +55,6 @@ if (localStorage.colorScheme) {
     let url = p.url;
     const title = p.title;
   
-    
     if (!ARE_WE_HOME && !url.startsWith('http')) {
       url = '../' + url;
     }
