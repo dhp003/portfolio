@@ -39,9 +39,9 @@ if (localStorage.colorScheme) {
 
   let pages = [
     { url: '', title: 'Home' },
-    { url: 'projects/', title: 'Projects' },
-    { url: 'contact/', title: 'Contact' },
-    { url: 'resume/', title: 'Resume' },
+    { url: '/projects/', title: 'Projects' },
+    { url: '/contact/', title: 'Contact' },
+    { url: '/resume/', title: 'Resume' },
     { url: 'https://github.com/dhp003', title: 'GitHub' }
   ];
   
@@ -79,7 +79,6 @@ if (localStorage.colorScheme) {
 
     nav.append(a);
   }
-  
 
   let navLinks = $$('nav a');
   let currentLink = navLinks.find(
