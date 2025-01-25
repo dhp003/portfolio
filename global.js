@@ -38,7 +38,7 @@ if (localStorage.colorScheme) {
   }
 
   let pages = [
-    { url: '', title: 'Home' },  
+    { url: '/portfolio', title: 'Home' },  
     { url: '/portfolio/projects/', title: 'Projects' },
     { url: '/portfolio/contact/', title: 'Contact' },
     { url: '/portfolio/resume/', title: 'Resume' },
