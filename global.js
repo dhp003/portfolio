@@ -33,13 +33,13 @@ document.body.insertAdjacentHTML(
     select.value = isDarkMode ? 'dark' : 'light'; 
   }
   
-const pages = [
-  { url: '', title: 'Home' },
-  { url: 'projects/', title: 'Projects' },
-  { url: 'contact/', title: 'Contact' },
-  { url: 'resume/', title: 'Resume' },
-  { url: 'https://github.com/dhp003', title: 'GitHub' }
-];
+  const pages = [
+    { url: 'index.html', title: 'Home' },
+    { url: 'projects/index.html', title: 'Projects' },
+    { url: 'contact/index.html', title: 'Contact' },
+    { url: 'resume/index.html', title: 'Resume' },
+    { url: 'https://github.com/dhp003', title: 'GitHub' }
+  ];  
 
 const ARE_WE_HOME = document.documentElement.classList.contains('home');
 
@@ -61,7 +61,7 @@ for (let p of pages) {
       'current',
       a.host === location.host && a.pathname === location.pathname
     );
-  
+    
     if (a.host !== location.host) {
       a.target = '_blank'; 
       a.rel = 'noopener noreferrer'; 
