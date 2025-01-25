@@ -38,10 +38,10 @@ if (localStorage.colorScheme) {
   }
 
   let pages = [
-    { url: './', title: 'Home' },  
-    { url: './projects/', title: 'Projects' },
-    { url: './contact/', title: 'Contact' },
-    { url: './resume/', title: 'Resume' },
+    { url: '', title: 'Home' },  
+    { url: '/portfolio/projects/', title: 'Projects' },
+    { url: '/portfolio/contact/', title: 'Contact' },
+    { url: '/portfolio/resume/', title: 'Resume' },
     { url: 'https://github.com/dhp003', title: 'GitHub' }
   ];
   
@@ -53,10 +53,6 @@ if (localStorage.colorScheme) {
   for (let p of pages) {
     let url = p.url;
     const title = p.title;
-  
-    if (!url.startsWith('http')) {
-      url = `/portfolio${url}`; 
-    }
   
     let a = document.createElement('a');
     a.href = url;
