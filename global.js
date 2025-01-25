@@ -38,7 +38,7 @@ if (localStorage.colorScheme) {
   }
 
   let pages = [
-    { url: './', title: 'Home' }, 
+    { url: './', title: 'Home' },  
     { url: './projects/', title: 'Projects' },
     { url: './contact/', title: 'Contact' },
     { url: './resume/', title: 'Resume' },
@@ -53,6 +53,10 @@ if (localStorage.colorScheme) {
   for (let p of pages) {
     let url = p.url;
     const title = p.title;
+  
+    if (!url.startsWith('http')) {
+      url = `/portfolio${url}`; 
+    }
   
     let a = document.createElement('a');
     a.href = url;
