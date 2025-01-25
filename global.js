@@ -66,6 +66,5 @@ for (let p of pages) {
       a.target = '_blank'; 
       a.rel = 'noopener noreferrer'; 
     }
-  
     nav.append(a);
   }
