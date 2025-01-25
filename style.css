@@ -162,3 +162,7 @@ html[data-theme="dark"] {
   font-size: 80%;
 }
 
+nav a.current {
+  border-bottom: 0.4em solid oklch(50% 10% 200 / 40%); 
+  padding-bottom: 0.1em; 
+}
