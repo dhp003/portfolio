@@ -76,3 +76,55 @@ if (localStorage.colorScheme) {
   );
   currentLink?.classList.add('current');
   
+  export async function fetchJSON(url) {
+    try {
+        // Fetch the JSON file from the given URL
+        const response = await fetch(url);
+        console.log(response); // Inspect the response in your browser's developer tools
+        if (!response.ok) {
+            throw new Error(`Failed to fetch projects: ${response.statusText}`);
+        }
+        // Parse the JSON data
+        const data = await response.json();
+        return data;
+    } catch (error) {
+        console.error('Error fetching or parsing JSON data:', error);
+    }
+}
+
+export function renderProjects(projects, containerElement, headingLevel = 'h2') {
+  if (!containerElement) {
+      console.error('Container element is missing or invalid.');
+      return;
+  }
+  // Clear the container before rendering
+  containerElement.innerHTML = '';
+
+  // Ensure the projects parameter is an array
+  if (!Array.isArray(projects)) {
+      console.error('Expected projects to be an array.');
+      return;
+  }
+
+  // If there are no projects, display a placeholder message
+  if (projects.length === 0) {
+      containerElement.innerHTML = '<p>No projects available.</p>';
+      return;
+  }
+
+  // Loop over the projects array and create an article for each project
+  projects.forEach(project => {
+      const article = document.createElement('article');
+      article.innerHTML = `
+          <${headingLevel}>${project.title}</${headingLevel}>
+          <img src="${project.image}" alt="${project.title}">
+          <p>${project.description}</p>
+      `;
+      containerElement.appendChild(article);
+  });
+}
+
+export async function fetchGitHubData(username) {
+  // return statement here
+  return fetchJSON(`https://api.github.com/users/${username}`);
+}

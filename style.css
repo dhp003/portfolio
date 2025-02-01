@@ -166,3 +166,33 @@ nav a.current {
   border-bottom: 0.4em solid oklch(50% 10% 200 / 40%); 
   padding-bottom: 0.1em; 
 }
+
+#profile-stats {
+  display: flex;
+  justify-content: center; 
+  padding: 10px;
+  border-radius: 8px;
+  width: 100%;
+}
+
+#profile-stats dl {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); 
+  gap: 20px; 
+  text-align: center; 
+  margin: 0 auto;
+  width: 80%; 
+}
+
+#profile-stats dt {
+  font-weight: bold;
+  font-size: 1rem;
+  grid-row: 1;
+}
+
+#profile-stats dd {
+  font-size: 1rem;
+  margin: 0;
+  grid-row: 2; 
+}
+
