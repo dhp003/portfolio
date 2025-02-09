@@ -196,3 +196,135 @@ nav a.current {
   grid-row: 2; 
 }
 
+.project-year {
+  color: gray;
+  font-family: Baskerville, serif;
+  font-size: 0.9rem;
+  font-variant-numeric: oldstyle-nums;
+  margin-top: 5px;
+}
+.project-info {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.chart-container {
+  display: flex;
+  align-items: center; 
+  justify-content: center;
+  gap: 2em; 
+  max-width: 60em;
+  min-width: 0;
+  margin: auto;
+  flex-wrap: nowrap; 
+}
+
+svg {
+  flex-shrink: 1; 
+}
+
+#projects-plot {
+  max-width: 20em;
+  height: auto;                               
+  flex-grow: 1;         
+  height: auto;         
+}
+
+.legend {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(9em, 1fr));
+  gap: 0.5em;
+  border: 1px solid #ccc;
+  padding: 1em;
+  background: white;
+  border-radius: 8px;
+  width: 100%; 
+  max-width: 30em; 
+  flex-shrink: 1; 
+  flex: 1;
+}
+
+.legend-item {
+  display: flex;   
+  align-items: center;     
+  gap: 0.5em;         
+  padding: 0.5em;
+  font-size: 0.9em;
+  font-weight: bold;
+}
+
+.legend .swatch {
+  width: 1em;                 
+  height: 1em;                 
+  display: inline-block;       
+  background-color: var(--color);
+  border-radius: 50%;           
+}
+
+.legend li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  white-space: nowrap;
+}
+
+@media (max-width: 900px) {
+  .chart-container {
+      flex-wrap: wrap;       
+      justify-content: center; 
+  }
+  #projects-pie-plot {
+      width: 60%;         
+  }
+  .legend {
+      max-width: 100%;      
+      text-align: center;
+  }
+}
+
+.search-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem; 
+  width: 100%;
+}
+
+.searchBar {
+  width: 90%; 
+  align-items: center; 
+  padding: 10px 15px; 
+  font-size: 1rem; 
+  border: 1px solid #ccc; 
+  border-radius: 5px; 
+  outline: none;
+  transition: all 0.3s ease-in-out;
+}
+
+.searchBar:focus {
+  border-color: #007bff; 
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+
+svg:has(path:hover) path:not(:hover) {
+  opacity: 0.5;
+}
+
+path {
+  transition: 300ms;
+  cursor: pointer; /* Indicates interactivity */
+}
+
+/* Highlight selected wedge */
+.selected {
+  --color: oklch(60% 45% 0) !important;
+  fill: var(--color) !important;
+}
+
+/* Highlight selected legend item */
+.legend-item.selected {
+  font-weight: bold;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
