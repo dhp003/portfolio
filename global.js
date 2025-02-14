@@ -42,6 +42,7 @@ if (localStorage.colorScheme) {
     { url: '/portfolio/projects/', title: 'Projects' },
     { url: '/portfolio/contact/', title: 'Contact' },
     { url: '/portfolio/resume/', title: 'Resume' },
+    { url: '/portfolio/meta/', title: 'Meta' },
     { url: 'https://github.com/dhp003', title: 'GitHub' }
   ];
   

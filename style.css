@@ -313,16 +313,16 @@ svg:has(path:hover) path:not(:hover) {
 
 path {
   transition: 300ms;
-  cursor: pointer; /* Indicates interactivity */
+  cursor: pointer; 
 }
 
-/* Highlight selected wedge */
+
 .selected {
   --color: oklch(60% 45% 0) !important;
   fill: var(--color) !important;
 }
 
-/* Highlight selected legend item */
+
 .legend-item.selected {
   font-weight: bold;
   background-color: rgba(0, 0, 0, 0.1);
