@@ -1,0 +1,8 @@
+# Ignore dynamically generated CSV file
+meta/loc.csv
+
+# Ignore all node_modules (dependencies)
+node_modules/
+
+# Ignore environment files
+.env
