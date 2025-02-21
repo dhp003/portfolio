@@ -1,4 +1,13 @@
 [
+
+    {
+        "title": "Bike Watching",
+        "year": "2025",
+        "image": "../images/Boston.png",
+        "description": "An interactive map visualization displaying Boston's bike traffic patterns over time using Mapbox and D3.js. Includes dynamic filtering, time-based analysis, and a legend for traffic flow trends.",
+        "url": "https://dhp003.github.io/bikewatching/"
+    },
+
     {
         "title": "Personal Portfolio Website",
         "year": "2025",
