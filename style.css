@@ -445,3 +445,10 @@ circle.selected {
   margin: 0;
   padding: 0 0 0.5rem 1rem;
 }
+
+.projects img {
+  max-width: 270px; /* Set fixed width */
+  height: auto; /* Maintain aspect ratio */
+  object-fit: contain; /* Ensure it doesn’t crop unexpectedly */
+}
+
